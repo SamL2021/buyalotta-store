@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+}
+
+.contents {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 10px solid #056e7c;
+    justify-content: center;
+}
+.img {
+    min-width: 250px;
+    max-width: 350px;
+}

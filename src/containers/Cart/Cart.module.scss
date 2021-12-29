@@ -1,0 +1,26 @@
+.cart__container {
+    border-top: 10px solid #056e7c;
+    padding-top: 30px;
+}
+.cart {
+    margin: 7%;
+    border-radius: 20px;
+    background-color: #13424f2d;
+    padding-bottom: 1%;
+    font-size: 1.5rem;
+    padding: 40px;
+
+    &__product {
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        text-align: left;
+    }
+    &__title {
+        font-weight: normal;
+    }
+
+    &__total {
+        text-align: right;
+    }
+}

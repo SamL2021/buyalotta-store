@@ -1,0 +1,47 @@
+@import "../../Assets/styles/_palette.scss";
+
+.container {
+    display: flex;
+}
+
+.img {
+    padding-left: 40px;
+    height: 60vh;
+    width: 20vw;
+    border-top: 10px solid #056e7c;
+    padding-top: 30px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+    padding-right: 40px;
+    text-align: left;
+    padding-bottom: 100px;
+    padding-top: 40px;
+    border-top: 10px solid #056e7c;
+}
+
+.button {
+    border-radius: 8px;
+    background-color: $clr-accent;
+    border: none;
+    color: white;
+    margin-top: 20px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 150px;
+    font-size: 16px;
+}
+
+.color-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+    margin-top: 10px;
+}
