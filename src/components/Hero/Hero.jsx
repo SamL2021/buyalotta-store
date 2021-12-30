@@ -1,17 +1,17 @@
 import React from "react";
-import styles from "./Header.module.scss";
+import styles from "./Hero.module.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Product from "../ProductCard";
+import ProductCard from "../ProductCard";
 import Cart from "../../containers/Cart";
 import Home from "../Home/Home";
 
 import cart from "../../Assets/img/cart.png";
 import home from "../../Assets/img/home-icon.png";
 import logo from "../../Assets/img/store-logo.jpg";
-import Products from "../../containers/Product";
+import Products from "../../containers/Products";
 import Footer from "../Footer/Footer";
 
-const Header = () => {
+const Hero = () => {
     return (
         <div>
             <Router>
@@ -49,7 +49,7 @@ const Header = () => {
                 </nav>
                 <Switch>
                     <Route path="/product/:id">
-                        <Product />
+                        <ProductCard />
                     </Route>
                     <Route exact path="/product">
                         <Products />
@@ -67,4 +67,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Hero;

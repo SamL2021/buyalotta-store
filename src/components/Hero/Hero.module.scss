@@ -4,7 +4,7 @@
 
 .logo {
     margin-top: 20px;
-    width: 400px;
+    max-width: 400px;
 }
 .nav {
     display: flex;
@@ -36,13 +36,11 @@ a {
 }
 
 .list {
-    list-style-type: none;
     margin: 0;
     padding: 10px;
 
     .links {
         color: white;
-        text-decoration: none;
         padding: 10px 0px;
     }
 }

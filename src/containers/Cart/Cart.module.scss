@@ -1,23 +1,29 @@
+@import "../../Assets/styles/_palette.scss";
+
 .cart__container {
-    border-top: 10px solid #056e7c;
+    display: flex;
+    justify-content: center;
+    border-top: 10px solid $clr-dark;
     padding-top: 30px;
 }
 .cart {
+    width: 80%;
     margin: 7%;
     border-radius: 20px;
-    background-color: #13424f2d;
+    background-color: $clr-light;
     padding-bottom: 1%;
-    font-size: 1.5rem;
+    font-size: 1.2 rem;
     padding: 40px;
 
     &__product {
         display: flex;
         justify-content: space-between;
-        height: 50px;
-        text-align: left;
+        min-height: 50px;
     }
-    &__title {
-        font-weight: normal;
+
+    &__count {
+        display: flex;
+        align-items: center;
     }
 
     &__total {

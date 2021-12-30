@@ -14,7 +14,7 @@ const Cart = () => {
     const getData = async () => {
         const cartData = await getCartProducts();
         const data = await getProducts();
-        // console.log("cart data ", cartData);
+        console.log("cart data ", cartData);
 
         if (cartData.length > 0) {
             cartData.map((cartProduct) => {
@@ -48,20 +48,19 @@ const Cart = () => {
                 {/* need to filter products */}
                 <div className={styles.cart}>
                     <div className={styles.cart__product}>
-                        <h5>Product</h5>
-                        <h5>Quantity</h5>
-                        <h5>Price</h5>
+                        <h3>Quantity</h3>
+                        <h3>Product</h3>
+                        <h3>Price</h3>
                     </div>
 
                     {cartProducts.map((product) => (
                         <div key={product.id} className={styles.cart__product}>
-                            <p className={styles.product__title}>
-                                {product.name}
-                            </p>
-                            <p className={styles.product__count}>
+                            <p className={styles.cart__count}>
                                 {product.count}
                             </p>
-                            <p className={styles.product__price}>
+                            <p>{product.name}</p>
+
+                            <p className={styles.cart__price}>
                                 ${product.price}
                             </p>
                         </div>

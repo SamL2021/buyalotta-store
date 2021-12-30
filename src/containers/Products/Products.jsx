@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
-    getCartProducts,
+    // getCartProducts,
     getProducts,
-    updateCartProduct,
-    addCartProduct,
+    // updateCartProduct,
+    // addCartProduct,
 } from "../../Assets/services/firesbase-utils";
 import styles from "./Products.module.scss";
 
@@ -14,9 +14,10 @@ const useQuery = () => {
     return new URLSearchParams(useLocation().search);
 };
 
-const Products = () => {
+export const Products = () => {
     // setting products and query variables to push to, setProducts to set value of products.
     const [products, setProducts] = useState([]);
+
     const query = useQuery();
     // const [count, setCount] = useState(start);
 
@@ -25,20 +26,20 @@ const Products = () => {
         const limit = rawLimit ? parseInt(rawLimit) : undefined;
 
         const data = await getProducts(limit);
-        const cartData = await getCartProducts();
-        console.log("data ", data);
-        if (cartData.length > 0) {
-            cartData.map((cartProduct) => {
-                let product = data.find((d) => d.id === cartProduct.id);
-                product.count = cartProduct.count;
-            });
-        }
-        // console.log(data);
+        // const cartData = await getCartProducts();
+        // console.log("data ", data);
+        // if (cartData.length > 0) {
+        //     cartData.map((cartProduct) => {
+        //         let product = data.find((d) => d.id === cartProduct.id);
+        //         product.count = cartProduct.count;
+        //     });
+        // }
+
         setProducts(data);
     };
 
     useEffect(() => {
-        //call getData
+        //call getData once
         getData();
     }, []);
 
@@ -70,6 +71,8 @@ const Products = () => {
     //     getData();
     // };
 
+    // Displays items as grid
+
     return (
         <>
             <div className={styles.container}>
@@ -87,21 +90,11 @@ const Products = () => {
                     ))}
                 </ul>
             </div>
-            {/* <Count onchange={}/> */}
-            {/* <div className={style.counter}>
-                <p className={style.counter__title}>Add to cart </p>
-                <button
-                    className={style.counter__button}
-                    onClick={() => handleDecrement(products.id)}
-                >
-                    {" "}
-                    -{" "}
-                </button>
-                <div className={style.counter__value}>{products.count}</div>
-                <button
-                    className={style.counter__button}
-                    onClick={() => handleIncrement(products.id)}
-                >
+            {/* <div>
+                <p>Add to cart </p>
+                <button onClick={() => handleDecrement(products.id)}>-</button>
+                <div>{products.count}</div>
+                <button onClick={() => handleIncrement(products.id)}>
                     {" "}
                     +{" "}
                 </button>
