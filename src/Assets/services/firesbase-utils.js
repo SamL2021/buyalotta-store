@@ -50,6 +50,11 @@ export const getCartProducts = async () => {
 
 // Update
 
+export const updateCartItems = async (id, record) => {
+    const ref = firestore.collection("cart").doc(id);
+    await ref.update(record);
+};
+
 export const addCartProducts = async (record) => {
     const col = firestore.collection("cart");
     await col.add(record);

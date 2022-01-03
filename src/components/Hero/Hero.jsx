@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ProductCard from "../ProductCard";
 import Cart from "../../containers/Cart";
 import Home from "../Home/Home";
-
 import cart from "../../Assets/img/cart.png";
 import home from "../../Assets/img/home-icon.png";
 import logo from "../../Assets/img/store-logo.jpg";

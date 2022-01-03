@@ -19,9 +19,10 @@ const ProductCard = () => {
             setProduct(data);
         };
         getData();
-    }, [id]);
+    }, []);
 
     const handleCreate = async (newCartProduct) => {
+        newCartProduct.quantity = count;
         const { id, ...newRecord } = newCartProduct;
         await addCartProducts(newRecord);
         getCartProducts();
