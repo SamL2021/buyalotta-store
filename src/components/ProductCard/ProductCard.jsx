@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProduct } from "../../Assets/services/firesbase-utils";
+import { getItem } from "../../Assets/services/firesbase-utils";
 import styles from "./ProductCard.module.scss";
 import Counter from "../../containers/Counter/Counter";
 
-const ProductCard = ({ results }) => {
+const ProductCard = () => {
     const { id } = useParams();
     const [product, setProduct] = useState(undefined);
 
     useEffect(() => {
         const getData = async () => {
-            const data = await getProduct(id);
+            const data = await getItem(id);
             setProduct(data);
         };
         getData();
@@ -77,7 +77,7 @@ const ProductCard = ({ results }) => {
                     </div>
                 </div>
             ) : (
-                <p>Loading...</p>
+                <p>Coming soon...</p>
             )}
         </>
     );

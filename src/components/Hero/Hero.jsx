@@ -16,15 +16,15 @@ const Hero = () => {
         <div>
             <Router>
                 <Link to="/">
-                    <img src={logo} alt="logo" className={styles["logo"]} />
+                    <img src={logo} alt="logo" className={styles.logo} />
                 </Link>
 
-                <nav className={styles["nav"]}>
-                    <ul className={styles["nav-bar"]}>
+                <nav className={styles.nav}>
+                    <ul className={styles.nav__bar}>
                         <li>
                             <Link to="/">
                                 <img
-                                    className={styles["img"]}
+                                    className={styles.img}
                                     src={home}
                                     alt="home"
                                 />
@@ -39,7 +39,7 @@ const Hero = () => {
                         <li>
                             <Link to="/cart">
                                 <img
-                                    className={styles["img"]}
+                                    className={styles.img}
                                     src={cart}
                                     alt="cart"
                                 />

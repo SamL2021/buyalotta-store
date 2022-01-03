@@ -1,6 +1,8 @@
+@import "../../Assets/styles/_palette.scss";
+
 .section {
     margin-top: 10px;
     background-color: #ffffff;
-    border-top: 10px solid #056e7c;
+    border-top: 10px solid $clr-dark;
     // border-bottom: 10px solid #056e7c;
 }

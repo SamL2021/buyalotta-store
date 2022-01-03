@@ -1,3 +1,5 @@
+@import "../../Assets/styles/_palette.scss";
+
 .container {
     display: flex;
 }
@@ -8,7 +10,8 @@
     flex-wrap: wrap;
     gap: 20px;
     padding-top: 20px;
-    border-top: 10px solid #056e7c;
+    padding-left: 0;
+    border-top: 10px solid $clr-dark;
     justify-content: center;
 }
 .img {

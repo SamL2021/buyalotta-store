@@ -2,19 +2,17 @@ import { useEffect, useState } from "react";
 import styles from "./Cart.module.scss";
 import {
     getCartProducts,
-    getProducts,
+    getCollection,
 } from "../../Assets/services/firesbase-utils";
 
-// we want items with name, and price. find items from Products that are in cart? Or import cart items in, but then also need count again.
-// We want total price, which is updated when new items are added.
 const Cart = () => {
     const [cartProducts, setCartProducts] = useState([]);
     const [total, setTotal] = useState(0);
 
     const getData = async () => {
         const cartData = await getCartProducts();
-        const data = await getProducts();
-        console.log("cart data ", cartData);
+        const data = await getCollection();
+        // console.log("cart data ", cartData);
 
         if (cartData.length > 0) {
             cartData.map((cartProduct) => {
@@ -37,10 +35,6 @@ const Cart = () => {
         //call getData
         getData();
     }, []);
-
-    const totalCount = (value) => {
-        // quantity * price for each cart item
-    };
 
     return (
         <>

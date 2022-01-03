@@ -2,9 +2,10 @@
 import styles from "./Counter.module.scss";
 // import {
 //     getCartProducts,
-//     getProducts,
+//     getCollection,
 //     updateCartProduct,
 //     addCartProduct,
+//     deleteCartProduct,
 // } from "../../Assets/services/firesbase-utils";
 
 const Counter = () => {
