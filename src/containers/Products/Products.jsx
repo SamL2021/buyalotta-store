@@ -5,7 +5,6 @@ import styles from "./Products.module.scss";
 
 //
 const useQuery = () => {
-    // console.log(useLocation());
     return new URLSearchParams(useLocation().search);
     //The useLocation hook returns the location object that represents the current URL. Like a useState that returns a new location whenever the URL changes.
 };
@@ -15,7 +14,6 @@ export const Products = () => {
     const [products, setProducts] = useState([]);
 
     const query = useQuery();
-    // const [count, setCount] = useState(start);
 
     const getData = async () => {
         const rawLimit = query.get("limit");

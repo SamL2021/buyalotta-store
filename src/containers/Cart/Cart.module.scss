@@ -2,6 +2,7 @@
 
 .cart__container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     border-top: 10px solid $clr-dark;
     padding-top: 30px;
@@ -27,6 +28,21 @@
     }
 
     &__total {
-        text-align: right;
+        display: flex;
+        flex-direction: column;
+
+        &__button {
+            font-size: 1 rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            background-color: $clr-light;
+            color: white;
+            padding: 10px;
+            margin-top: 5px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
 }

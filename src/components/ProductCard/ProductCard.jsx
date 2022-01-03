@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getItem } from "../../Assets/services/firesbase-utils";
+import {
+    getItem,
+    getCartProducts,
+    addCartProducts,
+} from "../../Assets/services/firesbase-utils";
 import styles from "./ProductCard.module.scss";
 import Counter from "../../containers/Counter/Counter";
 
 const ProductCard = () => {
     const { id } = useParams();
+    const [count, setCount] = useState(1);
     const [product, setProduct] = useState(undefined);
 
     useEffect(() => {
@@ -14,7 +19,13 @@ const ProductCard = () => {
             setProduct(data);
         };
         getData();
-    }, []);
+    }, [id]);
+
+    const handleCreate = async (newCartProduct) => {
+        const { id, ...newRecord } = newCartProduct;
+        await addCartProducts(newRecord);
+        getCartProducts();
+    };
 
     // Displays individual product pages
 
@@ -72,7 +83,15 @@ const ProductCard = () => {
                             </div>
                         </div>
                         <div>
-                            <Counter />
+                            <Counter count={count} setCount={setCount} />
+                            <button
+                                className={styles.button_add}
+                                onClick={() => {
+                                    handleCreate(product);
+                                }}
+                            >
+                                Add to cart
+                            </button>
                         </div>
                     </div>
                 </div>

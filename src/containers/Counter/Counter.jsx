@@ -1,26 +1,31 @@
-// import { useEffect, useState } from "react";
 import styles from "./Counter.module.scss";
-// import {
-//     getCartProducts,
-//     getCollection,
-//     updateCartProduct,
-//     addCartProduct,
-//     deleteCartProduct,
-// } from "../../Assets/services/firesbase-utils";
 
-const Counter = () => {
+const Counter = ({ setCount, count }) => {
     return (
         <>
             <div className={styles.container}>
-                <p>
-                    <strong>Add to cart</strong>
-                </p>
-                <p className={styles.count}>0</p>
+                <p className={styles.count}>{count}</p>
                 <div className={styles.counter}>
-                    <button className={styles.counter__button}>+</button>
+                    <button
+                        className={styles.counter__button}
+                        onClick={() => setCount(count + 1)}
+                    >
+                        +
+                    </button>
                     <br />
-                    <button className={styles.counter__button}>-</button>
+                    <button
+                        className={styles.counter__button}
+                        onClick={() => {
+                            if (!false && count === 1) {
+                                return;
+                            }
+                            setCount(count - 1);
+                        }}
+                    >
+                        -
+                    </button>
                 </div>
+                <br />
             </div>
         </>
     );

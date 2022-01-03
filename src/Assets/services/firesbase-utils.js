@@ -1,8 +1,7 @@
 import firestore from "../services/firebase";
 // https://firebase.google.com/docs/firestore/manage-data/add-data#web-version-8_6
 
-// Product
-
+//Collection
 export const getCollection = async (limit) => {
     //defining collection to get data from
     let col = firestore.collection("store-products");
@@ -17,6 +16,7 @@ export const getCollection = async (limit) => {
     return documents.map((doc) => ({ id: doc.id, ...doc.data() }));
 };
 
+//Item
 export const getItem = async (id) => {
     const col = firestore.collection("store-products");
     const ref = col.doc(id);
@@ -49,26 +49,14 @@ export const getCartProducts = async () => {
 };
 
 // Update
-export const updateCartProduct = async (product) => {
-    const ref = firestore.collection("cart").doc(product.id);
-    console.log("ref is ", ref);
-    await ref.update(product);
-};
 
-// export const updateCartItems = async (id, record) => {
-//     const ref = firestore.collection("cart").doc(id);
-//     await ref.update(record);
-// };
-
-export const addCartProduct = async (id) => {
+export const addCartProducts = async (record) => {
     const col = firestore.collection("cart");
-    await col.doc(id).set({
-        count: 1,
-    });
+    await col.add(record);
 };
 
 //Delete
-// export const deleteCartProduct = async (id) => {
-//     const col = firestore.collection("cart");
-//     await col.doc(id).delete();
-// };
+export const deleteCartProduct = async (id) => {
+    const col = firestore.collection("cart");
+    await col.doc(id).delete();
+};

@@ -42,6 +42,21 @@
     margin-top: 10px;
 }
 
+.button_add {
+    margin: 0;
+    font-size: 1 rem;
+    font-weight: bold;
+    border: none;
+    background-color: $clr-accent;
+    padding: 8px;
+    // width: auto;
+    color: white;
+    // height: auto;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 @media screen and (min-width: 768px) {
     .container {
         display: flex;
