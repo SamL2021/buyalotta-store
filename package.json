@@ -15,6 +15,7 @@
     "react-responsive-carousel": "^3.2.22",
     "react-router-dom": "^5.3.0",
     "react-scripts": "5.0.0",
+    "react-toastify": "^8.1.0",
     "sass": "^1.45.1",
     "web-vitals": "^2.1.2"
   },

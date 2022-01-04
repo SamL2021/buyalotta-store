@@ -1,25 +1,14 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getCollection } from "../../Assets/services/firesbase-utils";
 import styles from "./Products.module.scss";
-
-//
-const useQuery = () => {
-    return new URLSearchParams(useLocation().search);
-    //The useLocation hook returns the location object that represents the current URL. Like a useState that returns a new location whenever the URL changes.
-};
 
 export const Products = () => {
     // setting products and query variables to push to, setProducts to set value of products.
     const [products, setProducts] = useState([]);
 
-    const query = useQuery();
-
     const getData = async () => {
-        const rawLimit = query.get("limit");
-        const limit = rawLimit ? parseInt(rawLimit) : undefined;
-
-        const data = await getCollection(limit);
+        const data = await getCollection();
         setProducts(data);
     };
 

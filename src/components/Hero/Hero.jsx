@@ -1,14 +1,15 @@
-import React from "react";
 import styles from "./Hero.module.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ProductCard from "../ProductCard";
 import Cart from "../../containers/Cart";
 import Home from "../Home/Home";
+import Products from "../../containers/Products";
+import Footer from "../Footer/Footer";
+
+// Images for navbar
 import cart from "../../Assets/img/cart.png";
 import home from "../../Assets/img/home-icon.png";
 import logo from "../../Assets/img/store-logo.jpg";
-import Products from "../../containers/Products";
-import Footer from "../Footer/Footer";
 
 const Hero = () => {
     return (

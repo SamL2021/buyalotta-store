@@ -7,6 +7,8 @@ import {
 } from "../../Assets/services/firesbase-utils";
 import styles from "./ProductCard.module.scss";
 import Counter from "../../containers/Counter/Counter";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductCard = () => {
     const { id } = useParams();
@@ -28,6 +30,12 @@ const ProductCard = () => {
         getCartProducts();
     };
 
+    const cartActions = () => {
+        handleCreate(product);
+        notify();
+    };
+
+    const notify = () => toast("Added to cart!");
     // Displays individual product pages
 
     return (
@@ -50,13 +58,17 @@ const ProductCard = () => {
                         <br />
                         <p>{product.description}</p>
                         <br />
-                        <p>
-                            <em>Dimensions: </em> {product.dimensions}
-                        </p>
-                        <p>
-                            <em>Weight: </em> {product.weight} kgs
-                        </p>
+                        <div className={styles.content__sml}>
+                            <p>
+                                <strong>Dimensions:</strong>
+                                {product.dimensions}
+                            </p>
+                            <p>
+                                <strong>Weight: </strong> {product.weight} kgs
+                            </p>
+                        </div>
                         <br />
+
                         <div className={styles["color-container"]}>
                             <h4>Color Choices:</h4>
                             <div className={styles.radio_item}>
@@ -88,11 +100,12 @@ const ProductCard = () => {
                             <button
                                 className={styles.button_add}
                                 onClick={() => {
-                                    handleCreate(product);
+                                    cartActions();
                                 }}
                             >
                                 Add to cart
                             </button>
+                            <ToastContainer />
                         </div>
                     </div>
                 </div>

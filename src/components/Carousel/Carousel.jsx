@@ -1,9 +1,8 @@
-import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 import structure from "./Carousel.module.scss";
 
-export const CarouselProductPage = (autoplay) => {
+export const CarouselProductPage = () => {
     return (
         <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true}>
             <div className={structure.section}>
