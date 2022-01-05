@@ -1,6 +1,6 @@
 import styles from "./Hero.module.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import ProductCard from "../ProductCard";
+import ProductCard from "../../containers/ProductCard";
 import Cart from "../../containers/Cart";
 import Home from "../Home/Home";
 import Products from "../../containers/Products";

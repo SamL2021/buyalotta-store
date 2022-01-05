@@ -36,8 +36,8 @@ const ProductCard = () => {
     };
 
     const notify = () => toast("Added to cart!");
-    // Displays individual product pages
 
+    // Displays individual product pages
     return (
         <>
             {product ? (

@@ -4,7 +4,7 @@ import { getCollection } from "../../Assets/services/firesbase-utils";
 import styles from "./Products.module.scss";
 
 export const Products = () => {
-    // setting products and query variables to push to, setProducts to set value of products.
+    // setting products to push to, setProducts to set value of products.
     const [products, setProducts] = useState([]);
 
     const getData = async () => {
@@ -18,7 +18,6 @@ export const Products = () => {
     }, []);
 
     // Displays items as grid
-
     return (
         <div className={styles.container}>
             <ul className={styles.contents}>

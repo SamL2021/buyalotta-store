@@ -8,13 +8,6 @@ const Counter = ({ setCount, count }) => {
                 <div className={styles.counter}>
                     <button
                         className={styles.counter__button}
-                        onClick={() => setCount(count + 1)}
-                    >
-                        +
-                    </button>
-                    <br />
-                    <button
-                        className={styles.counter__button}
                         onClick={() => {
                             if (!false && count === 1) {
                                 return;
@@ -24,6 +17,13 @@ const Counter = ({ setCount, count }) => {
                     >
                         -
                     </button>
+                    <button
+                        className={styles.counter__button}
+                        onClick={() => setCount(count + 1)}
+                    >
+                        +
+                    </button>
+                    <br />
                 </div>
                 <br />
             </div>
