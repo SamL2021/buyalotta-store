@@ -5,8 +5,8 @@ import {
     getCartProducts,
     addCartProducts,
 } from "../../Assets/services/firesbase-utils";
-import styles from "./ProductCard.module.scss";
-import Counter from "../../containers/Counter/Counter";
+import styles from "./ProductPage.module.scss";
+import Counter from "../../components/Counter/Counter";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
