@@ -13,7 +13,7 @@ export const CarouselProductPage = () => {
             </div>
             <div className={structure.section}>
                 <img
-                    src="https://cdn.shopify.com/s/files/1/0556/2643/2670/files/01_MainBanners_DesktopTravel_V1_ee32734c-9cfb-4c9a-9c7c-6c4cbae6b3d0_1920x.jpg?v=1655174491"
+                    src="https://cdn.shopify.com/s/files/1/0556/2643/2670/collections/Main_Catergory_Banners_1020_x_425_0110_f9d01f8e-dc23-430e-99b8-04b4eb212c50_1920x.jpg?v=1652052772"
                     alt="lady with bag"
                 />
             </div>
